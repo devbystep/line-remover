@@ -17,3 +17,6 @@ File for test please look at directory src/test/resources
 ##Real task.##
 
 Create files with companies(from file companies.txt) that are not found in the file slovar.txt.
+
+
+[![Build Status](https://drone.io/bitbucket.org/devbystep/line-remover/status.png)](https://drone.io/bitbucket.org/devbystep/line-remover/latest)
