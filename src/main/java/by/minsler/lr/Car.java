@@ -9,4 +9,9 @@ public class Car implements Drivable {
     public void drive() {
         System.out.println("Drive by car");
     }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
+    }
 }

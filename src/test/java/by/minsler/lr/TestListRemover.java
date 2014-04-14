@@ -1,6 +1,7 @@
 package by.minsler.lr;
 
 import junit.framework.Assert;
+import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -26,5 +27,17 @@ public class TestListRemover {
         List<String> actualList = listRemover.getDiffBetweenLists(list1, list2);
         List<String> expectedList = Arrays.asList("32");
         Assert.assertEquals(expectedList, actualList);
+    }
+
+    @Test
+    public void testVarargs(){
+        printVarargs("1");
+        printVarargs("2", "3");
+    }
+
+    public static void printVarargs(String... args){
+        for(String arg: args){
+            System.out.println(arg);
+        }
     }
 }

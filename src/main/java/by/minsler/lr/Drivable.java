@@ -3,6 +3,6 @@ package by.minsler.lr;
 /**
  * @author Dzmitry Misiuk
  */
-public interface Drivable {
+public interface Drivable extends Comparable {
     void drive();
 }
