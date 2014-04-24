@@ -1,15 +1,21 @@
 package by.minsler.list_remover;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.Set;
 
 /**
- * author Dmitriy Vorobey
+ * author Dzmitry Varabei
  */
-public class LineRemover implements ListRemovable {
+public class LineRemover implements LineRemovable {
 
     @Override
-    public List<String> removeElements(List<String> list1, List<String> List2) {
-        return Arrays.asList("54");
+    public Set<String> removeElements(Set<String> set1, Set<String> set2) {
+    set1.removeAll(set2);
+        return (set1);
+       }
+
+    public static void main(String [] args){
+        SetsPrepareer sp = new SetsPrepareer();
+        LineRemover lr = new LineRemover();
+        System.out.println(lr.removeElements(sp.prepareCheckingCompanies(),sp.prepareGlossaryCompanies()));
     }
 }
