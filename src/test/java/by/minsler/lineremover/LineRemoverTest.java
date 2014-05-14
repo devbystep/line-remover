@@ -1,5 +1,6 @@
 package by.minsler.lineremover;
 
+import by.minsler.LineRemoverUtil;
 import by.minsler.lineremover.LineRemovable;
 import by.minsler.lineremover.LineRemover;
 import org.junit.Before;
@@ -18,11 +19,23 @@ import java.util.Set;
  */
 public class LineRemoverTest {
 
-    private LineRemovable setremovable;    //замечательно видит сорцы, так почему бы не взять его из сорцов?
+    private LineRemovable lineRemover;    //замечательно видит сорцы, так почему бы не взять его из сорцов?
     //Создай метод initData в LineRemovable     и вызови тут
 
+
+    @Test
+    public void testStaticClass(){
+        String slovarFileUlr = "....";
+        String companiesFileUrl = "...";
+        String resultUrl = "...";
+        Set<String> companiesSet = LineRemoverUtil.creatSetFromFile(companiesFileUrl);
+        Set<String> slovarSet = LineRemoverUtil.creatSetFromFile(slovarFileUlr);
+        Set<String> result = lineRemover.removeElements(companiesSet, slovarSet);
+        LineRemoverUtil.writeToFile(resultUrl, result);
+    }
+
     @Before
-    public static Set prepareGlossary(FileReader glossary) throws IOException {
+    public Set prepareGlossary(FileReader glossary) throws IOException {
         new LineRemoverTest();
         Set glossaryInsSet = new HashSet();
         BufferedReader buff = new BufferedReader(glossary);

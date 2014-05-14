@@ -1,6 +1,7 @@
 package by.minsler.lineremover;
 
 import java.io.*;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -9,6 +10,10 @@ import java.util.Set;
  * @author Dzmitry Varabei
  */
 public class LineRemover implements LineRemovable {
+
+    public static Set doSomethng(){
+        return Collections.EMPTY_SET;
+    }
 
     public void getDifferentCompanies() throws IOException {
         Set<String> diff = removeElements(new FileReader("d:\\Development\\Projects\\line-remover\\src\\test\\resources\\TestCompanies.txt"),

@@ -9,4 +9,6 @@ import java.util.Set;
  */
 public interface LineRemovable {
    Set<String> removeElements(FileReader fileCompanies, FileReader fileSlovar) throws IOException;
+
+   Set<String> removeElements(Set<String> companySet, Set<String> slovarSet);
 }
