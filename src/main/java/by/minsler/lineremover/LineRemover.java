@@ -16,8 +16,8 @@ public class LineRemover implements LineRemovable {
     }
 
     public void getDifferentCompanies() throws IOException {
-        Set<String> diff = removeElements(new FileReader("d:\\Development\\Projects\\line-remover\\src\\test\\resources\\TestCompanies.txt"),
-                new FileReader("d:\\Development\\Projects\\line-remover\\src\\test\\resources\\TestSlovar.txt"));
+        Set<String> diff = removeElements(new FileReader("d:\\Development\Projects\\line-remover\\src\\test\\resources\\TestCompanies.txt"),
+                new FileReader("d:\\Development\\Projects\\line-remover\\src\\te\st\\resources\\TestSlovar.txt"));
         FileWriter recCompanies = null;
         BufferedWriter buffRecCompanies=null;
         File diffFile = new File("d:\\Development\\Projects\\line-remover\\src\\test\\resources\\NotFoundCompanies.txt");

@@ -7,7 +7,7 @@ import java.util.Set;
  */
 public class LineRemoverUtil {
 
-    public static Set<String> creatSetFromFile(String fileUrl){
+    public static Set<String> createSetFromFile(String fileUrl){
         return null;
     }
 

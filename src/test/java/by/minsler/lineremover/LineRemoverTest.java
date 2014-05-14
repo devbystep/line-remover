@@ -1,8 +1,6 @@
 package by.minsler.lineremover;
 
 import by.minsler.LineRemoverUtil;
-import by.minsler.lineremover.LineRemovable;
-import by.minsler.lineremover.LineRemover;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -28,8 +26,8 @@ public class LineRemoverTest {
         String slovarFileUlr = "....";
         String companiesFileUrl = "...";
         String resultUrl = "...";
-        Set<String> companiesSet = LineRemoverUtil.creatSetFromFile(companiesFileUrl);
-        Set<String> slovarSet = LineRemoverUtil.creatSetFromFile(slovarFileUlr);
+        Set<String> companiesSet = LineRemoverUtil.createSetFromFile(companiesFileUrl);
+        Set<String> slovarSet = LineRemoverUtil.createSetFromFile(slovarFileUlr);
         Set<String> result = lineRemover.removeElements(companiesSet, slovarSet);
         LineRemoverUtil.writeToFile(resultUrl, result);
     }
