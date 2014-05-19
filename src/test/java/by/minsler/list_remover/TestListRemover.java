@@ -3,16 +3,14 @@ package by.minsler.list_remover;
 import junit.framework.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.Arrays;
-import java.util.List;
+import java.util.Set;
 
 /**
  * @author Aliaksei Pashkouski
  */
 public class TestListRemover {
 
-    private ListRemover listRemover;
+    private ListRemoverable listRemover;
 
     @Before
     public void prepareListRemover() {
@@ -20,12 +18,16 @@ public class TestListRemover {
     }
 
     @Test
-    public void testGetUniqueElements() {
-        List<String> list1 = Arrays.asList("23", "434", "866", "19", "1024", "988");
-        List<String> list2 = Arrays.asList("14", "23", "866", "28");
-        List<String> actualList = listRemover.getUniqueElements(list1, list2);
-        List<String> expectedList = Arrays.asList("14", "28");
-        Assert.assertEquals(actualList, expectedList);
+    public void testStaticClass() {
+        String testGlossaryPath = "d:/glossary.txt";
+        String testCheckPath = "d:/check.txt";
+        String testResultPath = "d:/result.txt";
+        String testCheckResultPath = "d:/check_result.txt";
+        Set<String> setGlossaryCompanies = ListRemoverUtil.createSetFromFile(testGlossaryPath);
+        Set<String> setCheckingCompanies = ListRemoverUtil.createSetFromFile(testCheckPath);
+        Set<String> setCheckResult = ListRemoverUtil.createSetFromFile(testCheckResultPath);
+        Set<String> setResult = listRemover.getUniqueElements(setGlossaryCompanies, setCheckingCompanies);
+        Assert.assertEquals(setCheckResult, setResult);
+        ListRemoverUtil.writeSetToFile(setResult, testResultPath);
     }
-
 }
