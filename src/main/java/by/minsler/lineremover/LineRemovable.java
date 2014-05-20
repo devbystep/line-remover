@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package by.minsler.lineremover;
 
 import java.io.FileReader;

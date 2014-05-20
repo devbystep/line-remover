@@ -1,3 +1,4 @@
+﻿<<<<<<< HEAD
 package by.minsler.lineremover;
 
 import java.io.*;
@@ -108,6 +109,3 @@ public class LineRemover implements LineRemovable {
           System.out.println(b);
       }   */
 }
-
-
-

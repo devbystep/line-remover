@@ -1,3 +1,4 @@
+﻿<<<<<<< HEAD
 package by.minsler.lineremover;
 
 
@@ -46,6 +47,3 @@ public class LineRemoverTest {
 
     }
 }
-
-
-
