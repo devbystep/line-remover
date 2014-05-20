@@ -10,24 +10,22 @@ import java.util.Set;
  */
 public class LineRemover implements LineRemovable {
 
-    public void getDifferentCompanies() throws IOException {
-        Set<String> diff = removeElements(new FileReader("d:\\Development\\Projects\\line-remover\\src\\test\\resources\\TestCompanies.txt"),
-                new FileReader("d:\\Development\\Projects\\line-remover\\src\\test\\resources\\TestSlovar.txt"));
+    public void createFileBySet(String url, Set result) throws IOException {
         FileWriter recCompanies = null;
         BufferedWriter buffRecCompanies=null;
-        File diffFile = new File("d:\\Development\\Projects\\line-remover\\src\\test\\resources\\NotFoundCompanies.txt");
+        File creatingFile = new File(url);
 
         try {
-            diffFile.createNewFile();
+            creatingFile.createNewFile();
         } catch (IOException e) {
             System.out.println("Ошибка при создании файла");
             e.printStackTrace();
         }
 
         try {
-            recCompanies = new FileWriter(diffFile.getPath());
+            recCompanies = new FileWriter(creatingFile.getPath());
             buffRecCompanies = new BufferedWriter(recCompanies);
-            Iterator iterator = diff.iterator();
+            Iterator iterator = result.iterator();
             while (iterator.hasNext()){
                 buffRecCompanies.write((String)iterator.next() +  "\n");
             }
@@ -49,9 +47,10 @@ public class LineRemover implements LineRemovable {
     }
 
     @Override
-    public Set<String> removeElements(FileReader fileCompanies, FileReader fileSlovar) throws IOException {
+    public Set<String> removeElements(String companiesUrl, String slovarUrl) throws IOException {
 
-
+        FileReader fileCompanies = new FileReader(companiesUrl);
+        FileReader fileSlovar = new FileReader(slovarUrl);
         Set glossaryCompanies = new HashSet();
         Set checkingCompanies = new HashSet();
         try {
@@ -73,8 +72,6 @@ public class LineRemover implements LineRemovable {
         checkingCompanies.removeAll(glossaryCompanies);
         return (checkingCompanies);
     }
-
-
 
     public Set<String> initGlossary(FileReader glossary) throws IOException {
 
@@ -102,10 +99,14 @@ public class LineRemover implements LineRemovable {
         } return glossaryInsSet;
     }
 
-      public static void main(String[] args) throws IOException {
-      LineRemover lr = new LineRemover();
-          lr.getDifferentCompanies();
-      }
+      /*public static void main(String[] args) throws IOException {
+          String str1 = "КЛЕВОЪabc";
+          String str2 = "клевоъABC";
+
+          boolean b =  str1.equalsIgnoreCase(str2);
+
+          System.out.println(b);
+      }   */
 }
 
 

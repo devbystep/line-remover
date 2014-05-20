@@ -8,5 +8,7 @@ import java.util.Set;
  * @author Dzmitry Varabei
  */
 public interface LineRemovable {
-   Set<String> removeElements(FileReader fileCompanies, FileReader fileSlovar) throws IOException;
+   Set<String> removeElements(String companiesUrl, String slovarUrl) throws IOException;
+    public void createFileBySet(String url, Set result)throws IOException;
+    public Set<String> initGlossary(FileReader glossary) throws IOException;
 }
