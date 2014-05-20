@@ -1,6 +1,4 @@
-﻿<<<<<<< HEAD
-package by.minsler.lineremover;
-
+﻿package by.minsler.lineremover;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -44,6 +42,5 @@ public class LineRemoverTest {
             System.out.println("Проблемы с чтением файла");
             e1.printStackTrace();
         }
-
     }
 }

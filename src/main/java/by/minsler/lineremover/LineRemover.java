@@ -1,5 +1,4 @@
-﻿<<<<<<< HEAD
-package by.minsler.lineremover;
+﻿package by.minsler.lineremover;
 
 import java.io.*;
 import java.util.HashSet;
@@ -11,6 +10,7 @@ import java.util.Set;
  */
 public class LineRemover implements LineRemovable {
 
+    @Override
     public void createFileBySet(String url, Set result) throws IOException {
         FileWriter recCompanies = null;
         BufferedWriter buffRecCompanies=null;
@@ -42,9 +42,7 @@ public class LineRemover implements LineRemovable {
                 System.out.println("Ошибка при закрытии исходящего потока или при закрытии буфера исходящего потока");
                 e.printStackTrace();
             }
-
         }
-
     }
 
     @Override
@@ -54,6 +52,7 @@ public class LineRemover implements LineRemovable {
         FileReader fileSlovar = new FileReader(slovarUrl);
         Set glossaryCompanies = new HashSet();
         Set checkingCompanies = new HashSet();
+
         try {
             glossaryCompanies = initGlossary(fileSlovar);
             checkingCompanies = initGlossary(fileCompanies);
@@ -74,6 +73,7 @@ public class LineRemover implements LineRemovable {
         return (checkingCompanies);
     }
 
+    @Override
     public Set<String> initGlossary(FileReader glossary) throws IOException {
 
         Set glossaryInsSet = new HashSet();
@@ -105,7 +105,6 @@ public class LineRemover implements LineRemovable {
           String str2 = "клевоъABC";
 
           boolean b =  str1.equalsIgnoreCase(str2);
-
           System.out.println(b);
       }   */
 }
