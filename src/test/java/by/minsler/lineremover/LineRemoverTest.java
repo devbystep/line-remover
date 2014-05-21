@@ -1,4 +1,4 @@
-﻿package by.minsler.lineremover;
+package by.minsler.lineremover;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -23,9 +23,9 @@ public class LineRemoverTest {
 
     @Test
     public void testRemoveElements() {
-        String companiesUrl = null;
-        String slovarUrl = null;
-        String resultUrl = null;
+        String companiesUrl = "d:\\Development\\Projects\\line-remover\\src\\test\\resources\\TestCompanies.txt";
+        String slovarUrl = "d:\\Development\\Projects\\line-remover\\src\\test\\resources\\TestSlovar.txt";
+        String resultUrl = "d:\\Development\\Projects\\line-remover\\src\\test\\resources\\NotFoundCompanies.txt";
         FileReader fileResult = null;
 
         try {
@@ -36,7 +36,7 @@ public class LineRemoverTest {
             Set actualSet = lineremovable.initGlossary(fileResult);
 
             Set<String> expectedSet = new HashSet<String>();
-            expectedSet.addAll(Arrays.asList("2", "4", "6", "8", "10", "12", "14", "16", "18", "20"));
+            expectedSet.addAll(Arrays.asList("33", "44", "55", "66", "77", "88", "99", "22", "111", "222", "тест"));
             Assert.assertEquals(expectedSet, actualSet);
         } catch (IOException e1) {
             System.out.println("Проблемы с чтением файла");

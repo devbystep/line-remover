@@ -1,6 +1,7 @@
-﻿package by.minsler.lineremover;
+package by.minsler.lineremover;
 
 import java.io.*;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -69,7 +70,18 @@ public class LineRemover implements LineRemovable {
             }
         }
 
-        checkingCompanies.removeAll(glossaryCompanies);
+        Iterator iteratorCheckingCompanies = checkingCompanies.iterator();
+Label1: while (iteratorCheckingCompanies.hasNext()){
+            String nameOfCheckingCompany = iteratorCheckingCompanies.next().toString();
+            Iterator iteratorGlossaryCompanies = glossaryCompanies.iterator();
+            while (iteratorGlossaryCompanies.hasNext()){
+                String nameOfCompanyFromGlossary = iteratorGlossaryCompanies.next().toString();
+                if (nameOfCompanyFromGlossary.equalsIgnoreCase(nameOfCheckingCompany)) {
+                    iteratorCheckingCompanies.remove();
+                    continue Label1;
+                }
+            }
+        }
         return (checkingCompanies);
     }
 
@@ -99,12 +111,4 @@ public class LineRemover implements LineRemovable {
             }
         } return glossaryInsSet;
     }
-
-      /*public static void main(String[] args) throws IOException {
-          String str1 = "КЛЕВОЪabc";
-          String str2 = "клевоъABC";
-
-          boolean b =  str1.equalsIgnoreCase(str2);
-          System.out.println(b);
-      }   */
 }
